@@ -12,6 +12,8 @@ channel_bar::channel_bar(QWidget * parent) : QWidget(parent) {
 
 	ui.verticalLayout->setAlignment(Qt::AlignTop);
 
+	QObject::connect(channel_button.get(), SIGNAL(pressed(Qt::MouseButton)), this, SLOT(button_pressed(Qt::MouseButton)));
+
 }
 
 void channel_bar::paintEvent(QPaintEvent *event)
@@ -20,6 +22,11 @@ void channel_bar::paintEvent(QPaintEvent *event)
 	opt.init(this);
 	QPainter p(this);
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+}
+
+void channel_bar::button_pressed(Qt::MouseButton button)
+{
+
 }
 
 channel_bar::~channel_bar() {

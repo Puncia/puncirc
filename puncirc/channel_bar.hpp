@@ -19,4 +19,7 @@ private:
 	std::shared_ptr<p_flat_button> channel_buttona;
 	std::shared_ptr<p_flat_button> channel_buttonb;
 
+public slots:
+	void button_pressed(Qt::MouseButton button);
+
 };

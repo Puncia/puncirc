@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>570</width>
-    <height>548</height>
+    <width>597</width>
+    <height>405</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,9 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -35,6 +38,9 @@
     </property>
     <item>
      <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item row="0" column="1">
        <spacer name="horizontalSpacer">
         <property name="orientation">
@@ -53,6 +59,9 @@
       </item>
       <item row="0" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>

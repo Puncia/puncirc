@@ -36,7 +36,7 @@ public:
     {
         if (puncircClass->objectName().isEmpty())
             puncircClass->setObjectName(QStringLiteral("puncircClass"));
-        puncircClass->resize(570, 548);
+        puncircClass->resize(597, 405);
         puncircClass->setStyleSheet(QLatin1String(".QWidget\n"
 "{\n"
 "	background: #33363E;\n"
@@ -44,19 +44,19 @@ public:
         centralWidget = new QWidget(puncircClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
-        verticalLayout->setSpacing(6);
+        verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         gridLayout = new QGridLayout();
-        gridLayout->setSpacing(6);
+        gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         horizontalSpacer = new QSpacerItem(300, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
 

@@ -68,6 +68,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_p_flat_button.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="chat_field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_chat_field.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_chat_field.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="puncirc.h">
@@ -91,6 +100,12 @@
     <CustomBuild Include="p_flat_button.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="chat_field.hpp">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="chat_field.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_puncirc.h">
@@ -100,6 +115,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_p_flat_button.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_chat_field.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

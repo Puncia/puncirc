@@ -30,8 +30,8 @@ public:
     {
         if (channel_bar->objectName().isEmpty())
             channel_bar->setObjectName(QStringLiteral("channel_bar"));
-        channel_bar->resize(203, 421);
-        channel_bar->setMinimumSize(QSize(203, 421));
+        channel_bar->resize(200, 421);
+        channel_bar->setMinimumSize(QSize(200, 421));
         channel_bar->setStyleSheet(QLatin1String("#channel_bar\n"
 "{\n"
 "	background: #616A80;\n"

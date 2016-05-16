@@ -17,3 +17,11 @@ void p_flat_button::paintEvent(QPaintEvent *event)
 	QPainter p(this);
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
+
+void p_flat_button::mousePressEvent(QMouseEvent *mpress)
+{
+	if (mpress->button() == Qt::LeftButton)
+	{
+		emit(pressed(mpress->button()));
+	}
+}

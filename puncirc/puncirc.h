@@ -4,6 +4,7 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_puncirc.h"
 #include "channel_bar.hpp"
+#include "chat_field.hpp"
 #include <memory>
 
 class puncirc : public QMainWindow
@@ -17,6 +18,7 @@ public:
 private:
 	Ui::puncircClass ui;
 	std::shared_ptr<channel_bar> channelBar;
+	std::shared_ptr<chat_field> chatField;
 
 };
 
