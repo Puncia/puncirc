@@ -1,6 +1,6 @@
 ﻿#include "channel_bar.hpp"
 
-channel_bar::channel_bar(QWidget * parent) : QWidget(parent) {
+channel_bar::channel_bar(QWidget * parent) : p_widget(parent) {
 	ui.setupUi(this);
 	channel_button = std::make_shared<p_flat_button>(this);
 	channel_buttona = std::make_shared<p_flat_button>(this);
@@ -14,14 +14,6 @@ channel_bar::channel_bar(QWidget * parent) : QWidget(parent) {
 
 	QObject::connect(channel_button.get(), SIGNAL(pressed(Qt::MouseButton)), this, SLOT(button_pressed(Qt::MouseButton)));
 
-}
-
-void channel_bar::paintEvent(QPaintEvent *event)
-{
-	QStyleOption opt;
-	opt.init(this);
-	QPainter p(this);
-	style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
 void channel_bar::button_pressed(Qt::MouseButton button)

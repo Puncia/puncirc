@@ -1,11 +1,10 @@
 ﻿#pragma once
-#include <QWidget>
 #include "ui_channel_bar.h"
 #include "p_flat_button.hpp"
-#include <QtGui\QPainter>
+#include "p_widget.hpp"
 #include <memory>
 
-class channel_bar : public QWidget {
+class channel_bar : public p_widget {
 	Q_OBJECT
 
 public:
@@ -14,7 +13,6 @@ public:
 
 private:
 	Ui::channel_bar ui;
-	void paintEvent(QPaintEvent *event);
 	std::shared_ptr<p_flat_button> channel_button;
 	std::shared_ptr<p_flat_button> channel_buttona;
 	std::shared_ptr<p_flat_button> channel_buttonb;
