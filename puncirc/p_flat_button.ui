@@ -31,9 +31,13 @@
 	background: #116AB6;
 	margin-bottom: 1px;
 }
-#p_flat_button:pressed
+#p_flat_button[pressed=&quot;true&quot;]
 {
-	background: #1C7FD3;
+	background: white;
+}
+#p_flat_button[pressed=&quot;false&quot;]
+{
+	background: black;
 }
 QLabel
 {
