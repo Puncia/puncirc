@@ -13,20 +13,68 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <p_flat_button.h>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
+#include "p_flat_button.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_p_channel_button
 {
 public:
+    QHBoxLayout *horizontalLayout;
+    QLabel *status;
+    QLabel *name;
+    QSpacerItem *horizontalSpacer;
 
     void setupUi(p_flat_button *p_channel_button)
     {
         if (p_channel_button->objectName().isEmpty())
             p_channel_button->setObjectName(QStringLiteral("p_channel_button"));
-        p_channel_button->resize(400, 300);
+        p_channel_button->resize(150, 50);
+        p_channel_button->setMinimumSize(QSize(150, 50));
+        p_channel_button->setMaximumSize(QSize(150, 16777215));
+        p_channel_button->setStyleSheet(QLatin1String("p_flat_button\n"
+"{\n"
+"	background-color: #323232;\n"
+"}\n"
+"\n"
+"#status\n"
+"{\n"
+"	color: #26cd77;\n"
+"	margin-left: -2px;\n"
+"}\n"
+"#name\n"
+"{\n"
+"	color: #e1e1e1;\n"
+"}\n"
+""));
+        horizontalLayout = new QHBoxLayout(p_channel_button);
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        status = new QLabel(p_channel_button);
+        status->setObjectName(QStringLiteral("status"));
+        status->setFrameShape(QFrame::VLine);
+        status->setLineWidth(2);
+
+        horizontalLayout->addWidget(status);
+
+        name = new QLabel(p_channel_button);
+        name->setObjectName(QStringLiteral("name"));
+        QFont font;
+        font.setPointSize(16);
+        name->setFont(font);
+
+        horizontalLayout->addWidget(name);
+
+        horizontalSpacer = new QSpacerItem(96, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
 
         retranslateUi(p_channel_button);
 
@@ -36,6 +84,8 @@ public:
     void retranslateUi(p_flat_button *p_channel_button)
     {
         p_channel_button->setWindowTitle(QApplication::translate("p_channel_button", "p_channel_button", 0));
+        status->setText(QString());
+        name->setText(QApplication::translate("p_channel_button", "Terry", 0));
     } // retranslateUi
 
 };

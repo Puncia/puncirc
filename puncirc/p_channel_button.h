@@ -9,7 +9,7 @@ class p_channel_button : public p_flat_button
 	Q_OBJECT
 
 public:
-	p_channel_button(p_flat_button * parent = Q_NULLPTR);
+	p_channel_button(p_widget * parent = Q_NULLPTR);
 	~p_channel_button();
 
 private:

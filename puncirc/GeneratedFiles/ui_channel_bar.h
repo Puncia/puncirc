@@ -13,9 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,29 +23,40 @@ QT_BEGIN_NAMESPACE
 class Ui_channel_bar
 {
 public:
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
+    QGridLayout *gridLayout;
+    QLabel *channel_separator;
 
     void setupUi(QWidget *channel_bar)
     {
         if (channel_bar->objectName().isEmpty())
             channel_bar->setObjectName(QStringLiteral("channel_bar"));
-        channel_bar->resize(200, 421);
-        channel_bar->setMinimumSize(QSize(200, 421));
+        channel_bar->resize(136, 421);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(channel_bar->sizePolicy().hasHeightForWidth());
+        channel_bar->setSizePolicy(sizePolicy);
+        channel_bar->setMinimumSize(QSize(136, 0));
         channel_bar->setStyleSheet(QLatin1String("#channel_bar\n"
 "{\n"
-"	background: #616A80;\n"
+"	background-color: #1d1d1d;\n"
+"}\n"
+"#channel_separator\n"
+"{\n"
+"	color: #323232;\n"
+"	margin-right: -3px;\n"
 "}"));
-        verticalLayout = new QVBoxLayout(channel_bar);
-        verticalLayout->setSpacing(0);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(0);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        gridLayout = new QGridLayout(channel_bar);
+        gridLayout->setSpacing(0);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        channel_separator = new QLabel(channel_bar);
+        channel_separator->setObjectName(QStringLiteral("channel_separator"));
+        channel_separator->setFrameShape(QFrame::VLine);
+        channel_separator->setLineWidth(1);
 
-        verticalLayout->addLayout(horizontalLayout);
+        gridLayout->addWidget(channel_separator, 0, 0, 1, 1);
 
 
         retranslateUi(channel_bar);
@@ -56,6 +67,7 @@ public:
     void retranslateUi(QWidget *channel_bar)
     {
         channel_bar->setWindowTitle(QApplication::translate("channel_bar", "channel_bar", 0));
+        channel_separator->setText(QString());
     } // retranslateUi
 
 };

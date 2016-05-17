@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
 
@@ -22,20 +21,12 @@ QT_BEGIN_NAMESPACE
 class Ui_p_flat_button
 {
 public:
-    QHBoxLayout *horizontalLayout;
 
     void setupUi(QWidget *p_flat_button)
     {
         if (p_flat_button->objectName().isEmpty())
             p_flat_button->setObjectName(QStringLiteral("p_flat_button"));
-        p_flat_button->resize(194, 35);
-        p_flat_button->setMinimumSize(QSize(0, 0));
-        p_flat_button->setMaximumSize(QSize(16777215, 35));
-        p_flat_button->setStyleSheet(QStringLiteral(""));
-        horizontalLayout = new QHBoxLayout(p_flat_button);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        p_flat_button->resize(460, 266);
 
         retranslateUi(p_flat_button);
 

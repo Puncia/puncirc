@@ -16,6 +16,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -25,30 +26,42 @@ class Ui_puncircClass
 {
 public:
     QWidget *centralWidget;
-    QVBoxLayout *verticalLayout;
+    QGridLayout *gridLayout;
     QGridLayout *main_grid_layout;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout;
 
     void setupUi(QMainWindow *puncircClass)
     {
         if (puncircClass->objectName().isEmpty())
             puncircClass->setObjectName(QStringLiteral("puncircClass"));
-        puncircClass->resize(597, 405);
+        puncircClass->resize(607, 405);
         puncircClass->setStyleSheet(QLatin1String(".QWidget\n"
 "{\n"
-"	background: #33363E;\n"
+"	background-color: #1d1d1d;\n"
 "}"));
         centralWidget = new QWidget(puncircClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        verticalLayout = new QVBoxLayout(centralWidget);
-        verticalLayout->setSpacing(0);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(0);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
         main_grid_layout = new QGridLayout();
         main_grid_layout->setSpacing(0);
         main_grid_layout->setObjectName(QStringLiteral("main_grid_layout"));
+        horizontalSpacer = new QSpacerItem(450, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        verticalLayout->addLayout(main_grid_layout);
+        main_grid_layout->addItem(horizontalSpacer, 0, 0, 1, 1);
+
+
+        gridLayout->addLayout(main_grid_layout, 0, 0, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+
+        gridLayout->addLayout(verticalLayout, 0, 1, 1, 1);
 
         puncircClass->setCentralWidget(centralWidget);
 
