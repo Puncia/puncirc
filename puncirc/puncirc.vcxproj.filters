@@ -39,6 +39,9 @@
     <Filter Include="Source Files\ui_base">
       <UniqueIdentifier>{ad5f7c65-3b08-4363-b4f5-3be31f19a333}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{dbed4eff-2f8d-45a7-abff-9f6bd2babc7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -155,6 +158,21 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_p_channel_button.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libircclient.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libirc_errors.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libirc_events.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libirc_options.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libirc_rfcnumeric.h">
+      <Filter>Header Files\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
