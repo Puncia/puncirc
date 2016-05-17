@@ -2,7 +2,8 @@
 #include <QWidget>
 #include "ui_chat_field.h"
 
-class chat_field : public QWidget {
+class chat_field : public QWidget
+{
 	Q_OBJECT
 
 public:

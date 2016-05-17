@@ -2,7 +2,8 @@
 #include "p_widget.h"
 #include "ui_p_flat_button.h"
 
-class p_flat_button : public p_widget {
+class p_flat_button : public p_widget
+{
 	Q_OBJECT
 
 public:

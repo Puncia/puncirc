@@ -1,6 +1,7 @@
 ﻿#include "channel_bar.h"
 
-channel_bar::channel_bar(QWidget * parent) : p_widget(parent) {
+channel_bar::channel_bar(QWidget * parent) : p_widget(parent)
+{
 	ui.setupUi(this);
 	channel_button = std::make_shared<p_flat_button>(this);
 	channel_buttona = std::make_shared<p_flat_button>(this);

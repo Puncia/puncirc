@@ -4,7 +4,8 @@
 #include "p_widget.h"
 #include <memory>
 
-class channel_bar : public p_widget {
+class channel_bar : public p_widget
+{
 	Q_OBJECT
 
 public:

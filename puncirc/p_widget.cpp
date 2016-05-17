@@ -1,6 +1,7 @@
-﻿#include "p_widget.hpp"
+﻿#include "p_widget.h"
 
-p_widget::p_widget(QWidget * parent) : QWidget(parent) {
+p_widget::p_widget(QWidget * parent) : QWidget(parent)
+{
 	
 }
 
@@ -41,6 +42,7 @@ void p_widget::applyProperty(char *property, value_type value)
 	update();
 }
 
-p_widget::~p_widget() {
+p_widget::~p_widget()
+{
 	
 }

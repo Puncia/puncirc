@@ -8,7 +8,8 @@
 #define PROPERTY_RELEASED "released"
 #define PROPERTY_CLICKED "clicked"
 
-class p_widget : public QWidget {
+class p_widget : public QWidget 
+{
 	Q_OBJECT
 
 public:

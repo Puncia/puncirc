@@ -4,7 +4,8 @@
 #include <p_flat_button.h>
 #include "ui_p_channel_button.h"
 
-class p_channel_button : public p_flat_button {
+class p_channel_button : public p_flat_button
+{
 	Q_OBJECT
 
 public:
