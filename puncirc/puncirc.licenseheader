@@ -1,4 +1,5 @@
-﻿/*
+﻿extensions: .cs .cpp .h
+/*
 *** puncirc - Marco Tolu <puncia> ***
 
 This program is free software: you can redistribute it and/or modify
@@ -16,21 +17,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 
-
-#pragma once
-#include "p_widget.h"
-#include "ui_p_flat_button.h"
-
-class p_flat_button : public p_widget
-{
-	Q_OBJECT
-
-public:
-	p_flat_button(p_widget * parent = Q_NULLPTR);
-	~p_flat_button();
-
-private:
-	Ui::p_flat_button ui;
-protected:
-	
-};
