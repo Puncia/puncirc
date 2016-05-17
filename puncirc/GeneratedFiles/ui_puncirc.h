@@ -14,10 +14,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -28,9 +26,7 @@ class Ui_puncircClass
 public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
-    QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer;
-    QHBoxLayout *horizontalLayout;
+    QGridLayout *main_grid_layout;
 
     void setupUi(QMainWindow *puncircClass)
     {
@@ -48,22 +44,11 @@ public:
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        gridLayout = new QGridLayout();
-        gridLayout->setSpacing(0);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer = new QSpacerItem(300, 20, QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        main_grid_layout = new QGridLayout();
+        main_grid_layout->setSpacing(0);
+        main_grid_layout->setObjectName(QStringLiteral("main_grid_layout"));
 
-        gridLayout->addItem(horizontalSpacer, 0, 1, 1, 1);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(0);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-
-        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
-
-
-        verticalLayout->addLayout(gridLayout);
+        verticalLayout->addLayout(main_grid_layout);
 
         puncircClass->setCentralWidget(centralWidget);
 

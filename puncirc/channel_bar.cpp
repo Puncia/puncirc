@@ -1,4 +1,4 @@
-﻿#include "channel_bar.hpp"
+﻿#include "channel_bar.h"
 
 channel_bar::channel_bar(QWidget * parent) : p_widget(parent) {
 	ui.setupUi(this);

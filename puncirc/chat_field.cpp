@@ -1,4 +1,4 @@
-﻿#include "chat_field.hpp"
+﻿#include "chat_field.h"
 
 chat_field::chat_field(QWidget * parent) : QWidget(parent) {
 	ui.setupUi(this);

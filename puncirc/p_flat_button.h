@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "p_widget.hpp"
+#include "p_widget.h"
 #include "ui_p_flat_button.h"
 
 class p_flat_button : public p_widget {

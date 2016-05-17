@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "ui_channel_bar.h"
-#include "p_flat_button.hpp"
-#include "p_widget.hpp"
+#include "p_channel_button.h"
+#include "p_widget.h"
 #include <memory>
 
 class channel_bar : public p_widget {

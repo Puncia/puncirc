@@ -3,8 +3,8 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_puncirc.h"
-#include "channel_bar.hpp"
-#include "chat_field.hpp"
+#include "channel_bar.h"
+#include "chat_field.h"
 #include <memory>
 
 class puncirc : public QMainWindow
