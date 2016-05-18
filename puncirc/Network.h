@@ -18,6 +18,7 @@
 
 #include "include\libircclient.h"
 #include "include\libirc_rfcnumeric.h"
+#include <thread>
 
 #pragma once
 class Network
@@ -27,7 +28,14 @@ public:
 	~Network();
 private:
 	irc_callbacks_t callbacks;
+	void t_receiver();
+
+	// callbacks
+	void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count);
+	void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count);
 
 	void init_callbacks();
+	std::thread receiver;
+
 };
 

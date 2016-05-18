@@ -27,6 +27,7 @@ puncirc::puncirc(QWidget *parent)
 
 	ui.verticalLayout->addWidget(channelBar.get(), 0, Qt::AlignRight);
 	
+	Network *HAPPY_FROG = new Network();
 	
 }
 

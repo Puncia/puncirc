@@ -26,25 +26,35 @@ Network::Network()
 	
 	irc_session_t *session = irc_create_session(&callbacks);
 	irc_option_set(session, LIBIRC_OPTION_STRIPNICKS);
+
+	if (irc_connect(session, "cho.ppy.sh", 6667, "", "puncia", "", ""))
+	{
+		//same
+	}
 }
 
 void Network::init_callbacks()
 {
-	callbacks.event_connect = event_connect;
-	callbacks.event_numeric = event_numeric;
+	std::bind(callbacks.event_connect, &Network::event_connect);
+	std::bind(callbacks.event_numeric, &Network::event_numeric);
 }
 
+// thread hosting irc's main loop
+void Network::t_receiver()
+{
+
+}
+
+void Network::event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+{
+	//receiver = std::thread(&Network::t_receiver, this);
+}
+
+void Network::event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
+{
+
+}
 
 Network::~Network()
 {
-}
-
-void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
-{
-
-}
-
-void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
-{
-
 }
