@@ -16,30 +16,35 @@
 */
 
 
-#include "puncirc.h"
 #include "Network.h"
 
-puncirc::puncirc(QWidget *parent)
-	: QMainWindow(parent)
+Network::Network()
 {
-	ui.setupUi(this);
-	channelBar = std::make_shared<channel_bar>(this);
+	memset(&callbacks, 0, sizeof(callbacks));
 
-	ui.verticalLayout->addWidget(channelBar.get(), 0, Qt::AlignRight);
+	init_callbacks();
 	
-	
+	irc_session_t *session = irc_create_session(&callbacks);
+	irc_option_set(session, LIBIRC_OPTION_STRIPNICKS);
 }
 
-uint8_t i = 0;
-
-void puncirc::tmp_add_txt(const char *l)
+void Network::init_callbacks()
 {
-	QLabel *ll = new QLabel(l);
-	ll->setStyleSheet("color:white;");
-	ui.main_grid_layout->addWidget(ll, ++i, 0, Qt::AlignBottom);
+	callbacks.event_connect = event_connect;
+	callbacks.event_numeric = event_numeric;
 }
 
-puncirc::~puncirc()
+
+Network::~Network()
+{
+}
+
+void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+{
+
+}
+
+void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
 
 }

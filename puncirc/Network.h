@@ -16,30 +16,18 @@
 */
 
 
-#include "puncirc.h"
-#include "Network.h"
+#include "include\libircclient.h"
+#include "include\libirc_rfcnumeric.h"
 
-puncirc::puncirc(QWidget *parent)
-	: QMainWindow(parent)
+#pragma once
+class Network
 {
-	ui.setupUi(this);
-	channelBar = std::make_shared<channel_bar>(this);
+public:
+	Network();
+	~Network();
+private:
+	irc_callbacks_t callbacks;
 
-	ui.verticalLayout->addWidget(channelBar.get(), 0, Qt::AlignRight);
-	
-	
-}
+	void init_callbacks();
+};
 
-uint8_t i = 0;
-
-void puncirc::tmp_add_txt(const char *l)
-{
-	QLabel *ll = new QLabel(l);
-	ll->setStyleSheet("color:white;");
-	ui.main_grid_layout->addWidget(ll, ++i, 0, Qt::AlignBottom);
-}
-
-puncirc::~puncirc()
-{
-
-}
