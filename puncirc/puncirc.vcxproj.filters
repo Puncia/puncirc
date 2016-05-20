@@ -107,6 +107,9 @@
     <ClCompile Include="network.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="network_events.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
     <ClCompile Include="network_events.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -148,6 +151,9 @@
     <CustomBuild Include="p_channel_button.h">
       <Filter>Header Files\ui_base</Filter>
     </CustomBuild>
+    <CustomBuild Include="network.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_puncirc.h">
@@ -179,9 +185,6 @@
     </ClInclude>
     <ClInclude Include="include\libirc_rfcnumeric.h">
       <Filter>Header Files\include</Filter>
-    </ClInclude>
-    <ClInclude Include="network.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

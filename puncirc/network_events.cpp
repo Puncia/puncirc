@@ -16,3 +16,17 @@
 */
 
 
+#include "network_events.h"
+
+namespace net
+{
+	void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+	{
+		//receiver = std::thread(&Network::t_receiver, this);
+	}
+
+	void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
+	{
+
+	}
+}

@@ -16,24 +16,12 @@
 */
 
 #pragma once
-
-
-#include "network_events.h"
-#include <thread>
+#include "include\libircclient.h"
+#include "include\libirc_rfcnumeric.h"
 
 namespace net
 {
-	class network
-	{		
-	public:
-		network();
-		~network();
-
-	private:
-		irc_callbacks_t callbacks;
-		void t_receiver();
-
-		void init_callbacks();
-		std::thread receiver;
-	};
+	// callbacks
+	void event_connect(irc_session_t *session, const char *irc_event, const char *origin, const char **params, unsigned int count);
+	void event_numeric(irc_session_t *session, unsigned int irc_event, const char *origin, const char **params, unsigned int count);
 }
