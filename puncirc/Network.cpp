@@ -16,9 +16,9 @@
 */
 
 
-#include "Network.h"
+#include "network.h"
 
-Network::Network()
+net::network::network()
 {
 	memset(&callbacks, 0, sizeof(callbacks));
 
@@ -33,28 +33,26 @@ Network::Network()
 	}
 }
 
-void Network::init_callbacks()
+void net::network::init_callbacks()
 {
-	std::bind(callbacks.event_connect, &Network::event_connect);
-	std::bind(callbacks.event_numeric, &Network::event_numeric);
 }
 
 // thread hosting irc's main loop
-void Network::t_receiver()
+void net::network::t_receiver()
 {
 
 }
 
-void Network::event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
+void net::network::event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count)
 {
 	//receiver = std::thread(&Network::t_receiver, this);
 }
 
-void Network::event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
+void net::network::event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count)
 {
 
 }
 
-Network::~Network()
+net::network::~network()
 {
 }

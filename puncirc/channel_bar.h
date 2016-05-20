@@ -22,20 +22,23 @@
 #include "p_widget.h"
 #include <memory>
 
-class channel_bar : public p_widget
+namespace ui
 {
-	Q_OBJECT
+	class channel_bar : public ui_base::p_widget
+	{
+		Q_OBJECT
 
-public:
-	channel_bar(QWidget * parent = Q_NULLPTR);
-	~channel_bar();
+	public:
+		channel_bar(QWidget * parent = Q_NULLPTR);
+		~channel_bar();
 
-private:
-	Ui::channel_bar ui;
+	private:
+		Ui::channel_bar ui;
 
-	std::shared_ptr<p_channel_button> ch_b1;
+		std::shared_ptr<ui_base::p_channel_button> ch_b1;
 
-public slots:
-	void button_pressed(Qt::MouseButton button);
+		public slots:
+		void button_pressed(Qt::MouseButton button);
 
-};
+	};
+}

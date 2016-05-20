@@ -1,21 +1,3 @@
-/*
-	This file is part of puncirc.
-
-    puncirc is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    puncirc is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    Full license: https://github.com/Puncia/puncirc/blob/master/LICENSE.md
-	Copyright (c) 2016 Marco Tolu [puncia]
-*/
-
-
 /********************************************************************************
 ** Form generated from reading UI file 'p_channel_button.ui'
 **
@@ -47,7 +29,7 @@ public:
     QLabel *name;
     QSpacerItem *horizontalSpacer;
 
-    void setupUi(p_flat_button *p_channel_button)
+    void setupUi(ui_base::p_flat_button *p_channel_button)
     {
         if (p_channel_button->objectName().isEmpty())
             p_channel_button->setObjectName(QStringLiteral("p_channel_button"));
@@ -99,7 +81,7 @@ public:
         QMetaObject::connectSlotsByName(p_channel_button);
     } // setupUi
 
-    void retranslateUi(p_flat_button *p_channel_button)
+    void retranslateUi(ui_base::p_flat_button *p_channel_button)
     {
         p_channel_button->setWindowTitle(QApplication::translate("p_channel_button", "p_channel_button", 0));
         status->setText(QString());

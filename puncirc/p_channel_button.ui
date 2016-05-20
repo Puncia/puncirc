@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>p_channel_button</class>
- <widget class="p_flat_button" name="p_channel_button">
+ <widget class="ui_base::p_flat_button" name="p_channel_button">
   <property name="geometry">
    <rect>
     <x>0</x>

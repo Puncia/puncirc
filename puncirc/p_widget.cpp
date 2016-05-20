@@ -18,12 +18,12 @@
 
 #include "p_widget.h"
 
-p_widget::p_widget(QWidget * parent) : QWidget(parent)
+ui_base::p_widget::p_widget(QWidget * parent) : QWidget(parent)
 {
 	
 }
 
-void p_widget::paintEvent(QPaintEvent *event)
+void ui_base::p_widget::paintEvent(QPaintEvent *event)
 {
 	QStyleOption opt;
 	opt.init(this);
@@ -31,7 +31,7 @@ void p_widget::paintEvent(QPaintEvent *event)
 	style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
-void p_widget::mousePressEvent(QMouseEvent *mpress)
+void ui_base::p_widget::mousePressEvent(QMouseEvent *mpress)
 {
 	if (mpress->button() == Qt::LeftButton)
 	{
@@ -41,7 +41,7 @@ void p_widget::mousePressEvent(QMouseEvent *mpress)
 	}
 }
 
-void p_widget::mouseReleaseEvent(QMouseEvent *mrelease)
+void ui_base::p_widget::mouseReleaseEvent(QMouseEvent *mrelease)
 {
 	if (mrelease->button() == Qt::LeftButton)
 	{
@@ -52,7 +52,7 @@ void p_widget::mouseReleaseEvent(QMouseEvent *mrelease)
 }
 
 template <typename value_type>
-void p_widget::applyProperty(char *property, value_type value)
+void ui_base::p_widget::applyProperty(char *property, value_type value)
 {
 	setProperty(property, value);
 	style()->unpolish(this);
@@ -60,7 +60,7 @@ void p_widget::applyProperty(char *property, value_type value)
 	update();
 }
 
-p_widget::~p_widget()
+ui_base::p_widget::~p_widget()
 {
 	
 }

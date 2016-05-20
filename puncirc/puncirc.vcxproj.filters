@@ -104,7 +104,10 @@
     <ClCompile Include="GeneratedFiles\Release\moc_p_channel_button.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="Network.cpp">
+    <ClCompile Include="network.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network_events.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -177,7 +180,7 @@
     <ClInclude Include="include\libirc_rfcnumeric.h">
       <Filter>Header Files\include</Filter>
     </ClInclude>
-    <ClInclude Include="Network.h">
+    <ClInclude Include="network.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

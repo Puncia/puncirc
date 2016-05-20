@@ -25,21 +25,24 @@
 #include "chat_field.h"
 #include <memory>
 
-class puncirc : public QMainWindow
+namespace application
 {
-	Q_OBJECT
+	class puncirc : public QMainWindow
+	{
+		Q_OBJECT
 
-public:
-	puncirc(QWidget *parent = 0);
-	~puncirc();
+	public:
+		puncirc(QWidget *parent = 0);
+		~puncirc();
 
-private:
-	Ui::puncircClass ui;
-	std::shared_ptr<channel_bar> channelBar;
-	std::shared_ptr<chat_field> chatField;
+	private:
+		Ui::puncircClass ui;
+		std::shared_ptr<ui::channel_bar> channelBar;
+		std::shared_ptr<ui::chat_field> chatField;
 
-	void tmp_add_txt(const char *l);
+		void tmp_add_txt(const char *l);
 
-};
+	};
+}
 
 #endif // PUNCIRC_H

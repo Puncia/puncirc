@@ -128,7 +128,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Network.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="network_events.cpp" />
     <ClCompile Include="puncirc.cpp" />
     <ClCompile Include="p_channel_button.cpp" />
     <ClCompile Include="p_flat_button.cpp" />
@@ -164,7 +165,7 @@
     <ClInclude Include="include\libirc_events.h" />
     <ClInclude Include="include\libirc_options.h" />
     <ClInclude Include="include\libirc_rfcnumeric.h" />
-    <ClInclude Include="Network.h" />
+    <ClInclude Include="network.h" />
     <CustomBuild Include="p_channel_button.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing p_channel_button.h...</Message>

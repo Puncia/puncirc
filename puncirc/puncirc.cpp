@@ -19,16 +19,17 @@
 #include "puncirc.h"
 #include "Network.h"
 
+using namespace application;
+
 puncirc::puncirc(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-	channelBar = std::make_shared<channel_bar>(this);
+	channelBar = std::make_shared<ui::channel_bar>(this);
 
 	ui.verticalLayout->addWidget(channelBar.get(), 0, Qt::AlignRight);
-	
-	Network *HAPPY_FROG = new Network();
-	
+
+
 }
 
 uint8_t i = 0;

@@ -15,27 +15,29 @@
 	Copyright (c) 2016 Marco Tolu [puncia]
 */
 
+#pragma once
 
 #include "include\libircclient.h"
 #include "include\libirc_rfcnumeric.h"
 #include <thread>
 
-#pragma once
-class Network
+namespace net
 {
-public:
-	Network();
-	~Network();
-private:
-	irc_callbacks_t callbacks;
-	void t_receiver();
+	class network
+	{
+	public:
+		network();
+		~network();
+	private:
+		irc_callbacks_t callbacks;
+		void t_receiver();
 
-	// callbacks
-	void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count);
-	void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count);
+		// callbacks
+		void event_connect(irc_session_t *session, const char *event, const char *origin, const char **params, unsigned int count);
+		void event_numeric(irc_session_t *session, unsigned int event, const char *origin, const char **params, unsigned int count);
 
-	void init_callbacks();
-	std::thread receiver;
+		void init_callbacks();
+		std::thread receiver;
 
-};
-
+	};
+}
